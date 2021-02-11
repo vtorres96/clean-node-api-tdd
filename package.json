@@ -4,7 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix",
+      "npm run test:staged",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test:ci"
+    }
   },
   "repository": {
     "type": "git",
@@ -16,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/vtorres96/clean-node-api-tdd/issues"
   },
-  "homepage": "https://github.com/vtorres96/clean-node-api-tdd#readme"
+  "homepage": "https://github.com/vtorres96/clean-node-api-tdd#readme",
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
 }
