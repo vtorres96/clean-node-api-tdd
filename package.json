@@ -6,19 +6,6 @@
   "scripts": {
     "test": "jest"
   },
-  "lint-staged": {
-    "*.js": [
-      "standard --fix",
-      "npm run test:staged",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run test:ci"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vtorres96/clean-node-api-tdd.git"
