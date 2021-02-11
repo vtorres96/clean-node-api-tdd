@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/vtorres96/clean-node-api-tdd#readme",
   "devDependencies": {
+    "lint-staged": "^10.5.3",
     "standard": "^16.0.3"
   }
 }
