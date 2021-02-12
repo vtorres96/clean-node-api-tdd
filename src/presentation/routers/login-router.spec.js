@@ -10,7 +10,7 @@ class LoginRouter {
 }
 
 describe('Login Router', () => {
-  test('Should return 400 if no email is provider', () => {
+  test('Should return 400 if no password is provider', () => {
     const sut = new LoginRouter()
     const httpRequest = {
       body: {
@@ -25,7 +25,7 @@ describe('Login Router', () => {
     const sut = new LoginRouter()
     const httpRequest = {
       body: {
-        password: 'any_password'
+        email: 'any_email@email.com'
       }
     }
     const httpResponse = sut.route(httpRequest)
