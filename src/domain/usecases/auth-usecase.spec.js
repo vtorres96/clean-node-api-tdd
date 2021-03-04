@@ -111,15 +111,27 @@ describe('Auth UseCase', () => {
     expect(accessToken).toBeTruthy()
   })
 
-  test('Should throw if invalid dependencyies is provided', async () => {
+  test('Should throw if invalid dependencies is provided', async () => {
     const invalid = {}
     const loadUserByEmailRepository = makeLoadUserByEmailRepository()
     const encrypter = makeEncrypter()
+
     const suts = [].concat(
       new AuthUseCase(),
       new AuthUseCase({}),
       new AuthUseCase({
         loadUserByEmailRepository: invalid
+      }),
+      new AuthUseCase({
+        loadUserByEmailRepository
+      }),
+      new AuthUseCase({
+        loadUserByEmailRepository,
+        encrypter: invalid
+      }),
+      new AuthUseCase({
+        loadUserByEmailRepository,
+        encrypter
       })
     )
     for (const sut of suts) {
