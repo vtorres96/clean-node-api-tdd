@@ -21,5 +21,5 @@ module.exports = {
       await this.connect(this.uri)
     }
     return this.db.collection(name)
-
+  }
 }
