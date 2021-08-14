@@ -5,4 +5,5 @@ const setupRoutes = require('./routes')
 
 setupApp(app)
 setupRoutes(app)
+
 module.exports = app
